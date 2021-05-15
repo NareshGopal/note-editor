@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
+}
+
+:root {
+  --blue: #00d1ff;
+  --white: #fff;
+  --neutral: #000;
+  --grey: #a4a4a4;
+  --light-grey: #f2f2f2;
+  --error: #ff0000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--blue);
+}
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: var(--light-grey);
+}
+
+.app {
+  display: flex;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em 2.5em;
+}
+
+.notes-section {
+  display: flex;
+  margin-top: 2em;
+}
+
+/* Styles for side menu */
+.side-menu {
+  height: 100vh;
+  width: 20%;
+  max-width: 250px;
+  padding: 2em;
+}
+.app-title {
+  font-size: 2em;
+}
+.note-types {
+  list-style: none;
+  font-size: 1.5rem;
+  margin-top: 2em;
+  color: var(--grey);
+}
+.note-type-item {
+  cursor: pointer;
+  padding: 0.3em 0.5em;
+  margin: 0.8em 0;
+}
+.note-type-item:hover {
+  color: var(--neutral);
+  font-weight: bold;
+}
+.note-type-item.active {
+  border: 2px solid var(--blue);
+  border-width: 0 0 0 10px;
+  color: var(--neutral);
+  font-weight: bold;
+}
+
+/* Styles for top bar */
+.topbar-container {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#search-note-input {
+  width: 35%;
+  height: 60px;
+  padding: 0.5em 1.3em;
+  border: 1px solid var(--grey);
+  border-radius: 30px;
+  outline: none;
+  font-size: 1.2em;
+  margin: 0;
+}
+#search-note-input:focus,
+#search-note-input:hover {
+  border: 1px solid var(--blue);
+  color: var(--neutral);
+}
+.welcome-user {
+  font-size: 1.5em;
+}
+.user-name {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+/* Styles for Note list */
+.note-lists-container {
+  width: 40%;
+  min-width: 450px;
+  padding-right: 3em;
+  height: calc(100vh - 150px);
+  overflow: hidden auto;
+}
+.note-section-title {
+  margin-bottom: 1em;
+  font-size: 1.7em;
+}
+
+/* Styles for Note */
+.note-container {
+  cursor: pointer;
+  height: 200px;
+  background-color: var(--light-grey);
+  margin-bottom: 2em;
+  border-radius: 1em;
+  padding: 1.5em;
+}
+.note-container:hover {
+  background-color: var(--neutral);
+  color: var(--white);
+}
+.note-container.active {
+  color: var(--white);
+  background-color: var(--blue);
+}
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.note-title-container {
+  display: flex;
+  align-items: center;
+}
+.deleted-tag {
+  margin-left: 1em;
+  background-color: var(--error);
+  color: white;
+  padding: 0.5em 1.2em;
+  border-radius: 2em;
+}
+.note-icons {
+  display: flex;
+  justify-content: space-between;
+}
+.icon {
+  height: 24px;
+  margin-left: 0.8em;
+  cursor: pointer;
+  color: var(--grey);
+}
+
+/* Styles for Note Info */
+.note-info-container {
+  width: 60%;
+  padding: 0 2em;
+}
+.note-info-container .note-header {
+  line-height: 1.2;
+}
+.note-info-title {
+  font-size: 1.7em;
+}
+.note-info-time {
+  color: var(--blue);
+  font-weight: bold;
+}
+.no-note-details {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+/* Styles for Note Popup */
+.popup-container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.popup-top-section {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+.popup-wrapper {
+  position: relative;
+  top: 100px;
+  left: 10%;
+  width: 40%;
+}
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+.popup-title {
+  margin-left: 15px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+label {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+.required-field {
+  color: var(--error);
+}
+input,
+textarea {
+  padding: 1em 1.5em;
+  border: 1px solid var(--grey);
+  border-radius: 3em;
+  outline: none;
+  resize: none;
+  font-size: 1em;
+  color: var(--grey);
+}
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+  border: 1px solid var(--blue);
+  color: var(--neutral);
+}
+textarea {
+  padding-top: 1.5em;
+}
+.error-input {
+  border: 1px solid var(--error);
+  color: (var(--error));
+}
+.error-message {
+  margin: 0.5em 0 3em 15px;
+  color: var(--error);
+}
+.secondary-btn,
+.primary-btn {
+  width: 150px;
+  padding: 1em 1.5em;
+  background-color: transparent;
+  border: 1px solid var(--blue);
+  border-radius: 2em;
+  margin-right: 3em;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 600;
+  outline: none;
+}
+.primary-btn {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+}
+.primary-btn:hover,
+.primary-btn:focus {
+  background-color: var(--neutral);
+}
+.secondary-btn:hover,
+.secondary-btn:focus {
+  border: 1px solid var(--neutral);
+  color: var(--blue);
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.popup-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  z-index: -2;
+}

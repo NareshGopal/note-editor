@@ -1,0 +1,8 @@
+export const DISPLAY_NOTES = "DISPLAY_NOTES";
+export const SET_ACTIVE_NOTE = "SET_ACTIVE_NOTE";
+export const TOGGLE_POPUP = "TOGGLE_POPUP";
+export const UPDATE_NOTE = "UPDATE_NOTE";
+export const FILTER_NOTES = "FILTER_NOTES";
+export const SEARCH_NOTES = "SEARCH_NOTES";
+export const TOGGLE_NOTE_DELETE = "TOGGLE_NOTE_DELETE";
+export const TOGGLE_NOTE_STAR = "TOGGLE_NOTE_STAR";
