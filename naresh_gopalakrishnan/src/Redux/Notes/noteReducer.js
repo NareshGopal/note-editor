@@ -63,7 +63,6 @@ const filterNotes = (notes) => {
 const noteReducer = (state = initialState, action) => {
     switch (action.type) {
         case DISPLAY_NOTES: 
-            debugger;
             switch (action.payload) {
                 case "All": return {
                     ...state,
@@ -94,7 +93,6 @@ const noteReducer = (state = initialState, action) => {
             }
 
         case SET_ACTIVE_NOTE: {
-            debugger;
             return {
                 ...state,
                 activeNote: action.payload
@@ -141,9 +139,7 @@ const noteReducer = (state = initialState, action) => {
         }
 
         case TOGGLE_NOTE_STAR: {
-            debugger
             const updtNotes = state.notes.map(note => {
-                debugger
                 if(note.id === action.payload) {
                     note.starred = !note.starred;
                     return note
@@ -157,9 +153,7 @@ const noteReducer = (state = initialState, action) => {
         }
 
         case TOGGLE_NOTE_DELETE: {
-            debugger
             const updtNotes = state.notes.map(note => {
-                debugger
                 if(note.id === action.payload) {
                     note.deleted = !note.deleted;
                     return note
